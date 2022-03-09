@@ -1,3 +1,4 @@
+const path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: './src/index.js',
@@ -15,6 +16,10 @@ module.exports = {
           'css-loader', // 2. turns css into commonjs module
           'sass-loader', // 1. turns sass into css
         ],
+      },
+      {
+        test: /\.html$/,
+        use: ['html-loader'],
       },
     ],
   },
